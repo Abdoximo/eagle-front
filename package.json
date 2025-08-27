@@ -1,0 +1,45 @@
+{
+  "name": "eagle-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "build:prod": "node scripts/build-optimize.js",
+    "build:analyze": "npm run build && npx vite-bundle-analyzer dist",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "security:audit": "npm audit && npm audit fix",
+    "clean": "rm -rf dist node_modules/.vite"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.1.1",
+    "@tiptap/core": "^2.2.4",
+    "@tiptap/starter-kit": "^2.2.4",
+    "@types/dompurify": "^3.0.5",
+    "axios": "^1.6.7",
+    "chart.js": "^4.4.1",
+    "date-fns": "^3.3.1",
+    "dompurify": "^3.2.6",
+    "lucide-vue-next": "^0.344.0",
+    "papaparse": "^5.4.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.19",
+    "vue-i18n": "^9.9.1",
+    "vue-router": "^4.3.0",
+    "vue-toastification": "^2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.11.24",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/tsconfig": "^0.5.1",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vue-tsc": "^1.8.27"
+  }
+}

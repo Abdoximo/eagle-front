@@ -1,0 +1,242 @@
+{
+  "common": {
+    "buttons": {
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "edit": "Editar",
+      "create": "Crear",
+      "update": "Actualizar",
+      "submit": "Enviar",
+      "back": "Atrás",
+      "next": "Siguiente",
+      "previous": "Anterior",
+      "close": "Cerrar",
+      "confirm": "Confirmar",
+      "retry": "Reintentar",
+      "refresh": "Actualizar",
+      "search": "Buscar",
+      "filter": "Filtrar",
+      "export": "Exportar",
+      "import": "Importar",
+      "download": "Descargar",
+      "upload": "Subir",
+      "send": "Enviar",
+      "schedule": "Programar",
+      "pause": "Pausar",
+      "resume": "Reanudar",
+      "duplicate": "Duplicar",
+      "preview": "Vista previa",
+      "test": "Probar"
+    },
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "create": "Crear",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "refresh": "Actualizar",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "all": "Todos",
+    "selected": "seleccionados",
+    "used": "usado",
+    "never": "Nunca",
+    "available": "Disponible",
+    "unavailable": "No disponible",
+    "validation": {
+      "required": "Este campo es requerido",
+      "email": "Por favor ingrese una dirección de correo válida",
+      "min_length": "Mínimo {min} caracteres requeridos",
+      "max_length": "Máximo {max} caracteres permitidos",
+      "numeric": "Por favor ingrese un número válido",
+      "phone": "Por favor ingrese un número de teléfono válido",
+      "url": "Por favor ingrese una URL válida",
+      "password_match": "Las contraseñas no coinciden",
+      "portRange": "El puerto debe estar entre 1 y 65535",
+      "priorityRange": "La prioridad debe estar entre 1 y 10",
+      "positiveNumber": "Debe ser un número positivo"
+    }
+  },
+
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "subtitle": "¡Bienvenido de nuevo! Por favor inicia sesión en tu cuenta.",
+      "email": "Dirección de correo",
+      "password": "Contraseña",
+      "remember": "Recordarme",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar sesión",
+      "no_account": "¿No tienes una cuenta?",
+      "register_link": "Regístrate aquí"
+    }
+  },
+
+  "dashboard": {
+    "title": "Panel de control",
+    "welcome": "¡Bienvenido de nuevo, {name}!",
+    "stats": {
+      "campaigns": "Campañas",
+      "contacts": "Contactos",
+      "emails_sent": "Emails enviados",
+      "credits": "Créditos",
+      "open_rate": "Tasa de apertura",
+      "click_rate": "Tasa de clics"
+    }
+  },
+
+  "settings": {
+    "smtp": {
+      "title": "Configuración SMTP",
+      "servers": "Servidores SMTP",
+      "add_server": "Agregar servidor SMTP",
+      "edit_server": "Editar servidor SMTP",
+      "test_connection": "Probar conexión",
+      "form": {
+        "name": "Nombre del servidor",
+        "namePlaceholder": "Ingrese el nombre del servidor",
+        "host": "Host SMTP",
+        "hostPlaceholder": "smtp.ejemplo.com",
+        "port": "Puerto",
+        "portPlaceholder": "587",
+        "username": "Nombre de usuario",
+        "usernamePlaceholder": "tu-email@ejemplo.com",
+        "password": "Contraseña",
+        "passwordPlaceholder": "Ingrese la contraseña",
+        "passwordEditHelp": "Deje vacío para mantener la contraseña existente",
+        "encryption": "Cifrado",
+        "priority": "Prioridad",
+        "priorityPlaceholder": "1-10",
+        "priorityHelp": "Nivel de prioridad (1 = más alto, 10 = más bajo)",
+        "authentication": "Autenticación",
+        "limits": "Límites de email",
+        "dailyLimit": "Límite diario",
+        "dailyLimitPlaceholder": "Deje vacío para ilimitado",
+        "dailyLimitHelp": "Máximo de emails por día (0 = ilimitado)",
+        "hourlyLimit": "Límite por hora",
+        "hourlyLimitPlaceholder": "Deje vacío para ilimitado",
+        "hourlyLimitHelp": "Máximo de emails por hora (0 = ilimitado)",
+        "testConnection": "Probar conexión",
+        "testing": "Probando conexión..."
+      },
+      "encryption": {
+        "none": "Ninguno",
+        "tls": "TLS",
+        "ssl": "SSL"
+      },
+      "test": {
+        "success": "Conexión exitosa",
+        "failed": "Conexión fallida"
+      },
+      "analytics": {
+        "usageTitle": "Uso SMTP",
+        "usageDescription": "Uso actual vs límites",
+        "noData": "Sin datos de uso",
+        "noDataDescription": "No hay datos de uso disponibles para servidores SMTP",
+        "hourly": "Por hora",
+        "daily": "Diario",
+        "weekly": "Semanal",
+        "monthly": "Mensual",
+        "thisHour": "Esta hora",
+        "successRate": "Tasa de éxito",
+        "lastUsed": "Último uso",
+        "totalSent": "Total enviado",
+        "activeServers": "Servidores activos",
+        "avgUsage": "Uso promedio",
+        "overallSuccess": "Éxito general",
+        "justNow": "Ahora mismo",
+        "hoursAgo": "Hace {hours}h",
+        "daysAgo": "Hace {days}d"
+      },
+      "performance": {
+        "title": "Métricas de rendimiento",
+        "description": "Rendimiento y confiabilidad del servidor",
+        "noData": "Sin datos de rendimiento",
+        "noDataDescription": "No hay datos de rendimiento disponibles",
+        "successRate": "Tasa de éxito",
+        "responseTime": "Tiempo de respuesta",
+        "uptime": "Tiempo activo",
+        "errorRate": "Tasa de error",
+        "totalSent": "Total enviado",
+        "avgResponse": "Respuesta prom.",
+        "errors": "Errores",
+        "lastActivity": "Última actividad",
+        "summary": "Resumen de rendimiento",
+        "overallSuccess": "Éxito general",
+        "acrossAllServers": "en todos los servidores",
+        "avgUptime": "Tiempo activo prom.",
+        "last30Days": "últimos 30 días",
+        "avgResponseTime": "Tiempo de respuesta prom.",
+        "allServers": "todos los servidores",
+        "totalErrors": "Total de errores",
+        "last24Hours": "últimas 24 horas",
+        "excellent": "Excelente",
+        "good": "Bueno",
+        "poor": "Pobre",
+        "critical": "Crítico",
+        "minutesAgo": "Hace {minutes}m",
+        "hoursAgo": "Hace {hours}h",
+        "daysAgo": "Hace {days}d"
+      }
+    }
+  },
+
+  "admin": {
+    "smtp": {
+      "title": "Gestión SMTP",
+      "description": "Gestionar servidores SMTP para la plataforma",
+      "addServer": "Agregar servidor SMTP",
+      "editServer": "Editar servidor SMTP",
+      "deleteTitle": "Eliminar servidor SMTP",
+      "deleteMessage": "¿Está seguro de que desea eliminar {name}? Esta acción no se puede deshacer.",
+      "shared_servers": "Servidores SMTP compartidos",
+      "load_balancing": "Balanceo de carga",
+      "server_stats": "Estadísticas del servidor",
+      "searchPlaceholder": "Buscar servidores...",
+      "filterByStatus": "Filtrar por estado",
+      "shared": "Compartido",
+      "dailyUsage": "Uso diario",
+      "successRate": "Tasa de éxito",
+      "noServers": "Sin servidores SMTP",
+      "noServersDescription": "No se encontraron servidores SMTP. Agregue su primer servidor para comenzar.",
+      "serversList": "Lista de servidores SMTP",
+      "bulkActivate": "Activar seleccionados",
+      "bulkDeactivate": "Desactivar seleccionados",
+      "bulkDelete": "Eliminar seleccionados",
+      "bulkActivateTitle": "Activar servidores SMTP",
+      "bulkDeactivateTitle": "Desactivar servidores SMTP",
+      "bulkDeleteTitle": "Eliminar servidores SMTP",
+      "bulkActivateMessage": "¿Está seguro de que desea activar {count} servidores SMTP?",
+      "bulkDeactivateMessage": "¿Está seguro de que desea desactivar {count} servidores SMTP?",
+      "bulkDeleteMessage": "¿Está seguro de que desea eliminar {count} servidores SMTP? Esta acción no se puede deshacer.",
+      "bulkActionSuccess": "Acción masiva completada exitosamente",
+      "bulkActionError": "Error al realizar la acción masiva",
+      "testing": "Probando conexión SMTP...",
+      "stats": {
+        "totalServers": "Total servidores",
+        "activeServers": "Servidores activos",
+        "dailyEmails": "Emails diarios",
+        "avgSuccessRate": "Tasa de éxito prom."
+      },
+      "table": {
+        "server": "Servidor",
+        "status": "Estado",
+        "usage": "Uso",
+        "performance": "Rendimiento",
+        "lastUsed": "Último uso",
+        "actions": "Acciones"
+      },
+      "actions": {
+        "test": "Probar conexión",
+        "edit": "Editar servidor",
+        "activate": "Activar",
+        "deactivate": "Desactivar",
+        "delete": "Eliminar"
+      },
+      "analytics": {
+        "usage": "Análisis de uso",
+        "performance": "Análisis de rendimiento"
+      }
+    }
+  }
+}
