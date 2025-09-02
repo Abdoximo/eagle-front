@@ -82,7 +82,7 @@
           <Button
             type="submit"
             class="w-full"
-            :loading="form.loading"
+            :loading="!!form.loading"
             :disabled="!form.isValid"
           >
             {{ t('auth.register.submit') }}
@@ -106,7 +106,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useAuthStore } from '@/stores/auth'
@@ -130,6 +130,22 @@ const form = useForm<RegisterData>({
   terms: false,
   is_admin: false
 })
+
+// Debug: Watch form.isValid changes
+if (import.meta.env.DEV) {
+  watch(() => form.isValid, (newVal) => {
+    console.log('RegisterView: form.isValid changed to:', newVal)
+    console.log('RegisterView: form.isValid.value:', form.isValid.value)
+    console.log('RegisterView: form.data:', { ...form.data })
+    console.log('RegisterView: form.errors:', { ...form.errors })
+    console.log('RegisterView: form.loading:', form.loading)
+  }, { immediate: true })
+  
+  // Also watch individual form fields
+  watch(() => form.data, (newData) => {
+    console.log('RegisterView: form.data changed:', newData)
+  }, { deep: true })
+}
 
 const handleRegister = async () => {
   try {
