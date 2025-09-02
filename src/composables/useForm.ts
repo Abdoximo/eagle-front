@@ -1,4 +1,4 @@
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
 import { showSuccess, showError } from '@/services/toast'
 
 export interface FormField {
@@ -24,6 +24,20 @@ export function useForm<T extends Record<string, any>>(
   const loading = ref(false)
   const touched = reactive<Record<keyof T, boolean>>({} as Record<keyof T, boolean>)
 
+  // Watch for data changes and validate fields automatically
+  watch(data, (newData, oldData) => {
+    Object.keys(newData).forEach(key => {
+      const newValue = newData[key as keyof T]
+      const oldValue = oldData ? oldData[key as keyof T] : undefined
+      
+      // If value changed, mark as touched and validate
+      if (newValue !== oldValue) {
+        touched[key as keyof T] = true
+        validateField(key as keyof T)
+      }
+    })
+  }, { deep: true })
+
   const isValid = computed(() => {
     // Check if there are any errors
     const hasNoErrors = Object.values(errors).every(error => !error)
@@ -46,6 +60,17 @@ export function useForm<T extends Record<string, any>>(
       // For other types, just check if they exist
       return value != null && value !== ''
     })
+    
+    // Debug logging in development
+    if (import.meta.env.DEV) {
+      console.log('Form validation:', {
+        data: { ...data },
+        errors: { ...errors },
+        hasNoErrors,
+        hasRequiredFields,
+        isValid: hasNoErrors && hasRequiredFields
+      })
+    }
     
     return hasNoErrors && hasRequiredFields
   })
