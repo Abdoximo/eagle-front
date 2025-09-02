@@ -25,7 +25,29 @@ export function useForm<T extends Record<string, any>>(
   const touched = reactive<Record<keyof T, boolean>>({} as Record<keyof T, boolean>)
 
   const isValid = computed(() => {
-    return Object.values(errors).every(error => !error)
+    // Check if there are any errors
+    const hasNoErrors = Object.values(errors).every(error => !error)
+    
+    // Check if all required fields are filled
+    const hasRequiredFields = Object.entries(data).every(([key, value]) => {
+      // Skip optional fields
+      if (key === 'is_admin') return true
+      
+      // Handle boolean fields (like terms checkbox)
+      if (typeof value === 'boolean') {
+        return key === 'terms' ? value === true : true
+      }
+      
+      // Handle string fields - must be non-empty
+      if (typeof value === 'string') {
+        return value.trim().length > 0
+      }
+      
+      // For other types, just check if they exist
+      return value != null && value !== ''
+    })
+    
+    return hasNoErrors && hasRequiredFields
   })
 
   const hasErrors = computed(() => {
@@ -57,7 +79,35 @@ export function useForm<T extends Record<string, any>>(
   // Validate single field
   const validateField = (field: keyof T) => {
     errors[field] = null
-    // Add custom validation logic here if needed
+    
+    const value = data[field]
+    
+    // Basic validation for common registration fields
+    if (field === 'email' && typeof value === 'string') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (value && !emailRegex.test(value)) {
+        errors[field] = 'Please enter a valid email address'
+      }
+    }
+    
+    if (field === 'password' && typeof value === 'string') {
+      if (value && value.length < 6) {
+        errors[field] = 'Password must be at least 6 characters'
+      }
+    }
+    
+    if (field === 'password_confirmation' && typeof value === 'string') {
+      const password = data['password' as keyof T]
+      if (value && value !== password) {
+        errors[field] = 'Passwords do not match'
+      }
+    }
+    
+    if (field === 'name' && typeof value === 'string') {
+      if (value && value.trim().length < 2) {
+        errors[field] = 'Name must be at least 2 characters'
+      }
+    }
   }
 
   // Validate all fields
